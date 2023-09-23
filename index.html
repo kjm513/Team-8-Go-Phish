@@ -4,11 +4,26 @@
     <link id="CSS" href="main.css" rel="stylesheet">
     <meta charset="UTF-8">
     <title>Go Phish test site</title>
+
+    <script>
+      function toggleCSS() {
+        // Obtains the <link> element that links to the css (by using its id).
+        var currentCSS = document.getElementById('CSS');
+
+        // Change the value of href attribute to change the css file.
+        if (currentCSS.getAttribute('href') == 'main.css') {
+          currentCSS.setAttribute('href', 'alternate.css');
+        } else {
+          currentCSS.setAttribute('href', 'main.css');
+        }
+    }
+    </script>
   </head>
 
   <body>
     <header>
       <h1>Go Phish Test Site</h1>
+      <button onclick="toggleCSS()" id="cssButton">Click Here To Change CSS!</button>
     </header>
   </body>
 </html>
