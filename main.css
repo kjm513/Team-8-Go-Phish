@@ -4,6 +4,20 @@ body {
     color: black;
 }
 
+
+img {
+    display: block;
+    margin: auto;
+    width: 45%;
+    border: solid 5px darkgray;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px black;
+    animation-name: chaChaSlide;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+}
+
 #fishHook {
     max-height: 100%;
     max-width: 100%;
