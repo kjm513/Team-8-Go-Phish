@@ -3,3 +3,8 @@ body {
     background-color: white;
     color: black;
 }
+
+#fishHook {
+    max-height: 100%;
+    max-width: 100%;
+}
