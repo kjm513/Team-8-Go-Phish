@@ -18,6 +18,7 @@ img {
     border-left: dotted;
     border-right: dotted;
     border-color: black;
+    padding: 20px;
 }
 
 #aboutList {
