@@ -1,1 +1,64 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <link id="CSS" onload="checkTheme()" href="main.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <link rel="icon" href="Resources/10839-fishing-pole-and-fish.png">
+    <title>Go Phish: Home</title>
 
+    <script>
+      function toggleCSS() {
+       // Obtains the <link> element that links to the css (by using its id).
+        const theme = document.getElementById('CSS');
+        const lightTheme = 'main.css';
+        const darkTheme = 'alternate.css';
+        
+        // Change the value of href attribute to change the css file.
+        if (theme.getAttribute('href') == 'main.css') {
+          theme.setAttribute('href', 'alternate.css');
+          localStorage.setItem('theme', darkTheme);
+          document.getElementById('cssButton').textContent = 'Click Here To Change To Light Mode';
+        } else {
+          theme.setAttribute('href', 'main.css');
+          localStorage.setItem('theme', lightTheme);
+          document.getElementById('cssButton').textContent = 'Click Here To Change To Dark Mode';
+        }
+    }
+
+    function checkTheme() {
+        const theme = document.getElementsByTagName('link')[0];
+        const themeValue = localStorage.getItem('theme');
+        if (themeValue) {
+          theme.setAttribute('href', themeValue);
+        }
+      }
+
+    </script>
+  </head>
+
+  <body>
+    <!-- The button below is for switching between light and dark mode, use the id of "cssButton" to make changes to it.-->
+    <header>
+      <h1>Go Phish</h1>
+    </header>
+
+    <nav>
+      <ul id="navbar">
+        <li id="navitem"><a href="index.html">Home</a></li>
+        <li id="navitem"><a href="about.html">About</a></li>
+        <li id="navitemButton"><button onclick="toggleCSS()" id="cssButton">Click Here To Change To Dark Mode</button></li>
+      </ul>
+    </nav>
+
+    <div id="fishHook">
+      <img src="Resources/fishhook.jpg" alt="Cartoon fish with hook">
+    </div>
+
+    <main>
+      <div id="main">
+        
+      </div>
+    </main>
+    
+  </body>
+</html>
