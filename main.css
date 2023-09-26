@@ -13,7 +13,22 @@ img {
     box-shadow: 10px 10px 10px black;
 }
 
-ul {
+#main {
+    text-align: center;
+    border-left: dotted;
+    border-right: dotted;
+    border-color: black;
+}
+
+#aboutList {
+    border: solid;
+    border-color: black;
+    padding: 30px;
+    display: inline-block;
+    text-align: left;
+}
+
+#navbar {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -21,12 +36,12 @@ ul {
     background-color: #333;
 }
 
-li {
+#navbar li {
     float: left;
     border-right: 2px solid #bbb;
 }
   
-li a {
+#navbar li a {
     display: block;
     color: white;
     text-align: center;
@@ -43,7 +58,7 @@ li a:hover {
     max-width: 100%;
 }
 
-#navitemButton {
+#navbar #navitemButton {
     float: right;
 }
 

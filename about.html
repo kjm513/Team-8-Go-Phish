@@ -1,23 +1,38 @@
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
-    <link id="CSS" href="main.css" rel="stylesheet">
+    <link id="CSS" onload="checkTheme()" href="main.css" rel="stylesheet">
     <meta charset="UTF-8">
     <link rel="icon" href="Resources/10839-fishing-pole-and-fish.png">
     <title>Go Phish: About</title>
 
     <script>
-      function toggleCSS() {
-        // Obtains the <link> element that links to the css (by using its id).
-        var currentCSS = document.getElementById('CSS');
-
+       function toggleCSS() {
+       // Obtains the <link> element that links to the css (by using its id).
+        const theme = document.getElementById('CSS');
+        const lightTheme = 'main.css';
+        const darkTheme = 'alternate.css';
+        
         // Change the value of href attribute to change the css file.
-        if (currentCSS.getAttribute('href') == 'main.css') {
-          currentCSS.setAttribute('href', 'alternate.css');
+        if (theme.getAttribute('href') == 'main.css') {
+          theme.setAttribute('href', 'alternate.css');
+          localStorage.setItem('theme', darkTheme);
+          document.getElementById('cssButton').textContent = 'Click Here To Change To Light Mode';
         } else {
-          currentCSS.setAttribute('href', 'main.css');
+          theme.setAttribute('href', 'main.css');
+          localStorage.setItem('theme', lightTheme);
+          document.getElementById('cssButton').textContent = 'Click Here To Change To Dark Mode';
         }
     }
+
+
+      function checkTheme() {
+        const theme = document.getElementsByTagName('link')[0];
+        const themeValue = localStorage.getItem('theme');
+        if (themeValue) {
+          theme.setAttribute('href', themeValue);
+        }
+      }
     </script>
   </head>
 
@@ -37,6 +52,24 @@
 
     <main>
       <div id="main">
+        <p>Go Phish is a website all about efficiency. <br> Are you a curious Internet dweller? Perhaps an overtaxed Security Analyst trying to solve a ticket that requires a lot of Open Source Intelligence? Or maybe, you just really like fish and ended up here by accident.
+        <br> Whatever the case, listed below is the core functionality of this site and what it should be used for.
+        </p>
+
+        <ul id="aboutList">
+          <li>This site is an aggregator of OSINT information.</li>
+          <li>URLs may be input into the text box on the home page. You must click submit afterwards.</li>
+          <li>APIs are called and referenced for the collection of information on the submitted URL.</li>
+          <li>The following OSINT APIs will be used: VirusTotal and URLScan</li>
+          <li>Results will be returned in a new tab to keep you organized and clutter free!</li>
+        </ul>
+
+        <p>VirusTotal Results Example:</p>
+        <img src="Resources/placeholderImage.jpg" alt="Cartoon fish with hook">
+        <p>URLScan Results Example:</p>
+        <img src="Resources/placeholderImage.jpg" alt="Cartoon fish with hook">
+        <p>GoPhish Results Example:</p>
+        <img src="Resources/placeholderImage.jpg" alt="Cartoon fish with hook">
       </div>
     </main>
     
