@@ -33,6 +33,20 @@
         }
       }
 
+      function testQueryVT(){
+        fetch("https://www.virustotal.com/api/v3/urls/d3d3Lmdvb2dsZS5jb20", {
+          method: "GET", // default, so we can ignore
+          mode:"cors",
+          headers: {
+            "accept": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "x-apikey": "28d4db81c6b4c9512609abd75ee6722a0fe66da83ece18c53ef6d23694912b8f",
+          }
+        })
+        .then((response) => response.json())
+        .then((json) => console.log(json));
+      }
+
     </script>
   </head>
 
@@ -60,7 +74,7 @@
           <label for="urlinput">Input URL to scan:</label><br>
           <input type="text" id="urlinput" name="urlinput" value="" required>
         </form>
-        <a href="results.html" target="_blank"><input type="submit" value="Submit"></a>
+        <a href="results.html" target="_blank"><input type="submit" onclick="testQueryVT()" value="Submit"></a>
       </div>
     </main>
     
